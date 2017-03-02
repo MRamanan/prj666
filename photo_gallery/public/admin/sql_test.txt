@@ -1,0 +1,1 @@
+Select * from Credential where Username = 'user21' LIMIT 1

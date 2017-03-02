@@ -1,0 +1,6 @@
+INSERT INTO ContactInformation (title, FirstName, LastName, PhoneNumber, Email, Street, City, PostalCode) VALUES ('Mr', 'ramanan', 'manokaran', '', '', '', '', '')
+INSERT INTO Credential (Id, Username, UserPassword, TypeofUser) VALUES ('6', 'ramanan', 'manokaran', 'U')INSERT INTO user2 (Id) VALUES ('6')INSERT INTO ContactInformation (title, FirstName, LastName, PhoneNumber, Email, Street, City, PostalCode) VALUES ('Mr', 'ramanan', 'manokaran', '', '', '', '', '')
+INSERT INTO Credential (Id, Username, UserPassword, TypeofUser) VALUES ('7', 'ramanan_d@gmail.com', 'ramsta123', 'D')INSERT INTO Dietician (DieticianId, ContactStartTimeMonday, ContactEndTimeMonday) VALUES ('7', '', '')
+INSERT INTO ContactInformation (title, FirstName, LastName, PhoneNumber, Email, Street, City, PostalCode) VALUES ('Mr', 'ramsta123', 'user2', '', '', '', '', '')
+INSERT INTO Credential (Id, Username, UserPassword, TypeofUser) VALUES ('8', 'user2@gmail.com', 'ramsta123', 'U')INSERT INTO user2 (Id) VALUES ('8')INSERT INTO ContactInformation (title, FirstName, LastName, PhoneNumber, Email, Street, City, PostalCode) VALUES ('', '', '', '', '', '', '', '')
+INSERT INTO ContactInformation (title, FirstName, LastName, PhoneNumber, Email, Street, City, PostalCode) VALUES ('', '', '', '', '', '', '', '')
