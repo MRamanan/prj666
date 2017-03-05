@@ -127,7 +127,7 @@ if (!$session->is_logged_in()){ redirect_to("login.php");}
 				console.log(saved_search_result);
 				var check = (obj.value).replace(/(^\d+)(.+$)/i,'$1');
 				if(check > 10)
-					check = (check%10) -1;
+					check = (check -1)%10;
 				else 
 					check -= 1;
 				var check1 = "#"+check+ "_checkbox";
@@ -154,6 +154,10 @@ if (!$session->is_logged_in()){ redirect_to("login.php");}
 			}
 			
 			function saveText(){
+			  for(var xn = 0; xn < p_hits.length; xn++)
+				{
+					p_hits[xn].mealTime = getSelectedText(xn + 'time_of_day');
+				}
 			  for (var i =0; i < saved_search_result.hits.length; i++){
 			  	 var not_found = true;
 				 var checboxid = '#'+ i + '_checkbox';
@@ -183,11 +187,17 @@ if (!$session->is_logged_in()){ redirect_to("login.php");}
 				return_text2 = "</br></br></br>";
 				for(var i = 0; i <p_hits.length ; i++){
 							// console.log(data.hits[i].fields.brand_name + " : " + data.hits[i].fields.item_name + "calories: "+ data.hits[i].fields.nf_calories + " fat: " + data.hits[i].fields.nf_total_fat);
-							return_text2 += "<input type=\"button\" value=\"" + (p_counter+1) + ") " + p_hits[i].brand_name + " : " + p_hits[i].item_name + "  calories: "+ p_hits[i].nf_calories + " fat: " + p_hits[i].nf_total_fat + "\" style=\"border:none; background: none; padding:0;\" />"+ "<select id=" +i+"time_of_day><option value=\"breakfast\">breakfast</option><option value=\"Lunch\">Lunch</option><option value=\"dinner\">Dinner</option><option value=\"snack\">Snack</option></select>" +"<input type=\"button\" id="+ i + "_checkboxInnerBox  value=" + 'X' + " onclick=\"DeleteItem(" +i+");\""  + ">  </br>";
+							return_text2 += "<input type=\"button\" value=\"" + (p_counter+1) + ") " + p_hits[i].brand_name + " : " + p_hits[i].item_name + "  calories: "+ p_hits[i].nf_calories + " fat: " + p_hits[i].nf_total_fat + "\" style=\"border:none; background: none; padding:0;\" />"+ "<select id=" +i+"time_of_day><option value=\"breakfast\">breakfast</option><option value=\"lunch\">Lunch</option><option value=\"dinner\">Dinner</option><option value=\"snack\">Snack</option></select>" +"<input type=\"button\" id="+ i + "_checkboxInnerBox  value=" + 'X' + " onclick=\"DeleteItem(" +i+");\""  + ">  </br>";
 							p_counter++;
 						}
 				var text_of_saved_items = 
 				$("#items_saved").html(return_text2);
+				for(var g = 0; g <p_hits.length ; g++){
+					if(p_hits[g].mealTime != null){
+						$("#"+g+"time_of_day").val(p_hits[g].mealTime.toLowerCase()).change();
+					}
+				}
+				
 			}
 
 			function jsObj2phpObj(object){
@@ -220,6 +230,7 @@ if (!$session->is_logged_in()){ redirect_to("login.php");}
 				{
 					p_hits[xn].mealTime = getSelectedText(xn + 'time_of_day');
 				}
+				console.log(p_hits);
 				var json = jsObj2phpObj(p_hits);
 				
 
@@ -229,11 +240,10 @@ if (!$session->is_logged_in()){ redirect_to("login.php");}
 			}
 			function getSelectedText(elementId) {
     			var elt = document.getElementById(elementId);
-
-    			if (elt.selectedIndex == -1)
+    			if (elt == null || elt.selectedIndex == -1)
         			return null;
-
-    			return elt.options[elt.selectedIndex].text;
+    			//return elt.options[elt.selectedIndex].text;
+				return $("#"+elementId+" option:selected").text();
 			}
 
 			function DeleteItem(p_id){

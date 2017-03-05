@@ -495,3 +495,30 @@ SELECT * FROM ContactInformation WHERE id=2 LIMIT 1
 Select * from dailyintake where ID=2 order by Date
 SELECT * FROM ContactInformation WHERE id=2 LIMIT 1
 Select * from dailyintake where ID=2 order by Date
+Select * from Credential where Username = 'devon@gmail.com' LIMIT 1
+Select * from Credential where username = 'devon@gmail.com' AND UserPassword = 'ramsta1223' LIMIT 1
+Select * from Credential where Username = 'devon@gmail.com' LIMIT 1
+Select * from Credential where username = 'devon@gmail.com' AND UserPassword = 'Ramsta123' LIMIT 1
+Select * from Credential where Username = 'devon@gmail.com' LIMIT 1
+Select * from Credential where username = 'devon@gmail.com' AND UserPassword = 'ramsta123' LIMIT 1
+SELECT * FROM ContactInformation WHERE id=2 LIMIT 1
+Select * from dailyintake where ID=2 order by Date
+SELECT * FROM ContactInformation WHERE id=2 LIMIT 1
+SELECT * FROM ContactInformation WHERE id=2 LIMIT 1
+SELECT * FROM ContactInformation WHERE id=2 LIMIT 1
+SELECT * FROM ContactInformation WHERE id=2 LIMIT 1
+SELECT * FROM ContactInformation WHERE id=2 LIMIT 1
+SELECT * FROM ContactInformation WHERE id=2 LIMIT 1
+SELECT * FROM ContactInformation WHERE id=2 LIMIT 1
+SELECT * FROM ContactInformation WHERE id=2 LIMIT 1
+SELECT * FROM ContactInformation WHERE id=2 LIMIT 1
+SELECT * FROM ContactInformation WHERE id=2 LIMIT 1
+SELECT * FROM ContactInformation WHERE id=2 LIMIT 1
+SELECT * FROM ContactInformation WHERE id=2 LIMIT 1
+SELECT * FROM ContactInformation WHERE id=2 LIMIT 1
+SELECT * FROM ContactInformation WHERE id=2 LIMIT 1
+SELECT * FROM ContactInformation WHERE id=2 LIMIT 1
+SELECT * FROM ContactInformation WHERE id=2 LIMIT 1
+SELECT * FROM ContactInformation WHERE id=2 LIMIT 1
+SELECT * FROM ContactInformation WHERE id=2 LIMIT 1
+SELECT * FROM ContactInformation WHERE id=2 LIMIT 1
